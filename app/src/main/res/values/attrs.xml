@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CapterButton">
+        <attr name="outside_circle_radius" format="dimension"/>
+        <attr name="inner_circle_radius" format="dimension"/>
+        <attr name="start_outside_circle_radius" format="dimension"/>
+        <attr name="start_inner_circle_radius" format="dimension"/>
+        <attr name="end_outside_circle_radius" format="dimension"/>
+        <attr name="end_inner_circle_radious" format="dimension"/>
+        <attr name="outside_circle_color" format="color"/>
+        <attr name="inner_circle_color" format="color"/>
+        <attr name="arc_color" format="color"/>
+        <attr name="arc_strokewidth" format="dimension"/>
+
+    </declare-styleable>
+
+
+</resources>
