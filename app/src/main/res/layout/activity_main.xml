@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:CapterButton="http://schemas.android.com/apk/res-auto"
+    xmlns:PictureButton="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".MainActivity">
     <FrameLayout
@@ -12,18 +12,18 @@
         android:layout_height="match_parent"
         android:visibility="gone"
         />
-    <com.example.song.carmer.ui.widget.CapterButton
+    <com.example.song.carmer.ui.widget.PictureButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        CapterButton:outside_circle_radius="40dp"
-        CapterButton:outside_circle_color="@android:color/holo_blue_light"
-        CapterButton:inner_circle_radius="20dp"
-        CapterButton:inner_circle_color="@android:color/white"
-        CapterButton:end_outside_circle_radius="50dp"
-        CapterButton:end_inner_circle_radious="10dp"
-        CapterButton:arc_color="@color/colorAccent"
-        CapterButton:arc_strokewidth="5dp"
-        CapterButton:start_inner_circle_radius="40dp"
-        CapterButton:start_outside_circle_radius="20dp"
+        PictureButton:outside_circle_radius="40dp"
+        PictureButton:outside_circle_color="@android:color/holo_blue_light"
+        PictureButton:inner_circle_radius="20dp"
+        PictureButton:inner_circle_color="@android:color/white"
+        PictureButton:end_outside_circle_radius="50dp"
+        PictureButton:end_inner_circle_radious="10dp"
+        PictureButton:arc_color="@color/colorAccent"
+        PictureButton:arc_strokewidth="5dp"
+        PictureButton:start_inner_circle_radius="40dp"
+        PictureButton:start_outside_circle_radius="20dp"
         />
 </LinearLayout>

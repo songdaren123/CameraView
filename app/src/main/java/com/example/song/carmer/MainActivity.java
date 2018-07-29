@@ -3,10 +3,9 @@ package com.example.song.carmer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.song.carmer.ui.widget.CapterButton;
+import com.example.song.carmer.ui.widget.PictureButton;
 
 /**
  * songmingzhan
@@ -27,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView(){
         mFrameLayout=findViewById(R.id.frame_layout);
         FrameLayout.LayoutParams layoutParams=new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT,FrameLayout.LayoutParams.WRAP_CONTENT);
-        CapterButton button=new CapterButton(this);
+        PictureButton button=new PictureButton(this);
         button.setLayoutParams(layoutParams);
         mFrameLayout.addView(button);
 

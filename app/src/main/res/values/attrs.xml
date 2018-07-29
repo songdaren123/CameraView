@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="CapterButton">
+    <declare-styleable name="PictureButton">
         <attr name="outside_circle_radius" format="dimension"/>
         <attr name="inner_circle_radius" format="dimension"/>
         <attr name="start_outside_circle_radius" format="dimension"/>

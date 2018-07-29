@@ -20,8 +20,8 @@ import com.example.song.carmer.R;
 /**
  * Create by songdaren on 18-7-19.
  */
-public class CapterButton extends View {
-    private String TAG="CapterButton";
+public class PictureButton extends View {
+    private String TAG="PictureButton";
     private Paint mPaint;
     private float outside_circle_radius=100;
     private float inner_circle_radius=50;
@@ -38,44 +38,44 @@ public class CapterButton extends View {
     private ValueAnimator mAnimator=ValueAnimator.ofFloat(0,360);
     private int maxDuration=10;
     private Context mContext;
-    public CapterButton(Context context) {
+    public PictureButton(Context context) {
         this(context,null);
     }
 
-    public CapterButton(Context context, @Nullable AttributeSet attrs) {
+    public PictureButton(Context context, @Nullable AttributeSet attrs) {
         this(context,attrs,0);
     }
 
-    public CapterButton(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public PictureButton(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         initCapterButton(context, attrs, defStyleAttr);
     }
     private void initCapterButton(Context context,AttributeSet attributeSet,int defStyleAttr){
-        TypedArray mTypeArray= context.obtainStyledAttributes(attributeSet, R.styleable.CapterButton,defStyleAttr,0);
+        TypedArray mTypeArray= context.obtainStyledAttributes(attributeSet, R.styleable.PictureButton,defStyleAttr,0);
         if(mTypeArray!=null){
-            Log.i(TAG,"initCapterButton");
-            outside_circle_radius=mTypeArray.getDimension(R.styleable.CapterButton_outside_circle_radius,100);
-            outside_circle_color=mTypeArray.getColor(R.styleable.CapterButton_outside_circle_color,Color.WHITE);
-            inner_circle_radius=mTypeArray.getDimension(R.styleable.CapterButton_inner_circle_radius,50);
-            inner_circle_color=mTypeArray.getColor(R.styleable.CapterButton_inner_circle_color,Color.WHITE);
-            start_outside_circle_radius=mTypeArray.getDimension(R.styleable.CapterButton_start_outside_circle_radius,100);
-            end_outside_circle_radius=mTypeArray.getDimension(R.styleable.CapterButton_end_outside_circle_radius,150);
-            start_inner_circle_radius=mTypeArray.getDimension(R.styleable.CapterButton_start_inner_circle_radius,50);
-            end_inner_circle_radious=mTypeArray.getDimension(R.styleable.CapterButton_end_inner_circle_radious,30);
-            arc_color=mTypeArray.getColor(R.styleable.CapterButton_arc_color,Color.BLUE);
+            Log.i(TAG,"PictureButton");
+            outside_circle_radius=mTypeArray.getDimension(R.styleable.PictureButton_outside_circle_radius,100);
+            outside_circle_color=mTypeArray.getColor(R.styleable.PictureButton_outside_circle_color,Color.WHITE);
+            inner_circle_radius=mTypeArray.getDimension(R.styleable.PictureButton_inner_circle_radius,50);
+            inner_circle_color=mTypeArray.getColor(R.styleable.PictureButton_inner_circle_color,Color.WHITE);
+            start_outside_circle_radius=mTypeArray.getDimension(R.styleable.PictureButton_start_outside_circle_radius,100);
+            end_outside_circle_radius=mTypeArray.getDimension(R.styleable.PictureButton_end_outside_circle_radius,150);
+            start_inner_circle_radius=mTypeArray.getDimension(R.styleable.PictureButton_start_inner_circle_radius,50);
+            end_inner_circle_radious=mTypeArray.getDimension(R.styleable.PictureButton_end_inner_circle_radious,30);
+            arc_color=mTypeArray.getColor(R.styleable.PictureButton_arc_color,Color.BLUE);
         }
             mPaint=new Paint();
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        Log.i(TAG, "onMeasure: ");
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int widthmode=MeasureSpec.getMode(widthMeasureSpec);
         int widthsize=MeasureSpec.getSize(widthMeasureSpec);
         int heightmode=MeasureSpec.getMode(heightMeasureSpec);
         int heightsize=MeasureSpec.getSize(heightMeasureSpec);
-        Log.i(TAG,"onMeasure------width:"+widthsize+"height:"+heightsize);
         switch (widthmode){
             case MeasureSpec.AT_MOST://根据父类大小匹配 wrap_content
                 Log.i(TAG,"onMeasure----AT_MOST");
@@ -102,15 +102,13 @@ public class CapterButton extends View {
 
         centerX=widthsize/2;
         centerY=heightsize/2;
-        Log.i(TAG,"outside_circle_radius2:"+outside_circle_radius);
         setMeasuredDimension(widthsize,heightsize);
 
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-//        super.onSizeChanged(w, h, oldw, oldh);
-        Log.i(TAG,"outside_circle_radius1:"+outside_circle_radius);
+        Log.i(TAG, "onSizeChanged: ");
         centerX=getWidth()/2;
         centerY=getHeight()/2;
 
@@ -118,8 +116,6 @@ public class CapterButton extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-//        super.onDraw(canvas);
-        Log.i(TAG,"outside_circle_radius3:"+outside_circle_radius);
         mPaint.setColor(outside_circle_color);
         mPaint.setAntiAlias(true);
         canvas.drawCircle(centerX,centerY,outside_circle_radius,mPaint);
@@ -143,7 +139,7 @@ public class CapterButton extends View {
 //
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
-                Float dowmX=event.getX();
+                float dowmX=event.getX();
                 float downY=event.getY();
                 if(dowmX>(centerX-outside_circle_radius)&&dowmX<(centerX+outside_circle_radius)&&downY<(centerY+outside_circle_radius)&&downY>(centerY-outside_circle_radius))
                 startAnimtor(start_outside_circle_radius,end_outside_circle_radius,start_inner_circle_radius,end_inner_circle_radious);
@@ -161,8 +157,6 @@ public class CapterButton extends View {
 
     }
     private void startAnimtor(float start_outside_circle_radius,float end_outside_circle_radius,float start_inner_circle_radius,float end_inner_circle_radious){
-        Log.i(TAG,"outside_circle_radius5:"+end_outside_circle_radius);
-        Log.i(TAG,"outside_circle_radius4:"+end_inner_circle_radious);
         ValueAnimator outside=ValueAnimator.ofFloat(start_outside_circle_radius,end_outside_circle_radius);
         ValueAnimator inner=ValueAnimator.ofFloat(start_inner_circle_radius,end_inner_circle_radious);
         outside.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -210,6 +204,11 @@ public class CapterButton extends View {
         public void run() {
             startProgressAnmitor();
         }
+    }
+    public interface PictureButtonListener{
+        void onPicture();
+        void onStartRecoder();
+        void onEndRecoder(long time);
     }
 
 }
